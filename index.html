@@ -9,6 +9,7 @@
         /* Global styles */
         body {
             font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -25,12 +26,16 @@
             list-style: none;
             display: flex;
             justify-content: center;
+            justify-content: space-between;
             margin: 0;
             padding: 0;
+            width: 100%;
         }
 
         nav li {
             margin: 0 20px;
+            flex: 1;
+            text-align: center;
         }
 
         nav a {
@@ -58,6 +63,11 @@
         .fade {
             opacity: 0;
             animation: fadeIn 1.5s ease-in forwards;
+        }
+
+        .audit {
+            font-size: 3rem;
+            font-weight: 300;
         }
 
         @keyframes fadeIn {
@@ -103,6 +113,7 @@
         <h1>Welcome to My First Project</h1>
         <h2 class="fade">Nordic Audit &amp; Assurance</h2>
         <p>This is my first project using GitHub Pages.</p>
+        <h2 class="fade audit">Nordic Audit &amp; Assurance</h2>
         <a href="#" class="button">Explore More</a>
     </div>
 
