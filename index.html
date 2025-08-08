@@ -6,22 +6,57 @@
     <title>My First Project</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Global styles */
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            text-align: center;
         }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #000; /* Black background */
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: white; /* White text */
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #f4f4f4; /* Lighter color on hover */
+        }
+
+        /* Content Styles */
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
         h1 {
             font-size: 2rem;
             color: #333;
-            margin-top: 50px;
         }
-        .content {
-            margin-top: 30px;
-        }
+
+        /* Button Styles */
         .button {
             padding: 10px 20px;
             font-size: 16px;
@@ -32,16 +67,30 @@
             text-decoration: none;
             border-radius: 5px;
         }
+
         .button:hover {
             background-color: #444;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My First Project</h1>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Winning Aspirations</a></li>
+            <li><a href="#">Nordic Nine Goals</a></li>
+            <li><a href="#">Strategy Execution</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
     <div class="content">
+        <h1>Welcome to My First Project</h1>
         <p>This is my first project using GitHub Pages.</p>
         <a href="#" class="button">Explore More</a>
     </div>
+
 </body>
 </html>
