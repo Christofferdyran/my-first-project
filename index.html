@@ -88,6 +88,92 @@
         .button:hover {
             background-color: #444;
         }
+
+        /* Nordic Nine Section */
+        .nordic-nine {
+            margin: 60px auto;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .nordic-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .vertical-boxes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .vertical-boxes .box {
+            background-color: #fff;
+            color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            gap: 10px;
+        }
+
+        .goal {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            padding: 20px 10px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .goal .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 80%;
+            position: relative;
+            text-align: center;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -108,5 +194,87 @@
         <a href="#" class="button">Explore More</a>
     </div>
 
+    <!-- Nordic Nine Section -->
+    <section class="nordic-nine">
+        <h3>NORDIC NINE</h3>
+        <div class="nordic-content">
+            <div class="vertical-boxes">
+                <div class="box">#One PEOPLE</div>
+                <div class="box">#One CLIENTS</div>
+                <div class="box">One PLATFORM</div>
+            </div>
+            <div class="grid">
+                <div class="goal" style="background-color:#e74c3c;" data-title="Diversity, Equity & Inclusion" data-description="Foster an inclusive environment where everyone can thrive.">
+                    <span class="icon">🧍🏽‍♀️</span>
+                    <span class="headline">Diversity, Equity & Inclusion</span>
+                </div>
+                <div class="goal" style="background-color:#27ae60;" data-title="Elevated Experience & Wellbeing" data-description="Promote wellbeing and elevate experiences for all professionals.">
+                    <span class="icon">💚</span>
+                    <span class="headline">Elevated Experience & Wellbeing</span>
+                </div>
+                <div class="goal" style="background-color:#2980b9;" data-title="Tailored Career Paths & Learning" data-description="Provide personalized career growth and continuous learning opportunities.">
+                    <span class="icon">🎓</span>
+                    <span class="headline">Tailored Career Paths & Learning</span>
+                </div>
+                <div class="goal" style="background-color:#f39c12;" data-title="Market-leading Audit Brand" data-description="Strengthen our reputation as the leading audit brand.">
+                    <span class="icon">🏅</span>
+                    <span class="headline">Market-leading Audit Brand</span>
+                </div>
+                <div class="goal" style="background-color:#8e44ad;" data-title="Hyperscaled IT, Data & Analytics" data-description="Leverage cutting-edge technology, data, and analytics at scale.">
+                    <span class="icon">🧠</span>
+                    <span class="headline">Hyperscaled IT, Data & Analytics</span>
+                </div>
+                <div class="goal" style="background-color:#16a085;" data-title="Accelerated ESG" data-description="Drive environmental, social, and governance progress across services.">
+                    <span class="icon">🌱</span>
+                    <span class="headline">Accelerated ESG</span>
+                </div>
+                <div class="goal" style="background-color:#d35400;" data-title="Undisputed Quality Leader" data-description="Deliver unparalleled audit quality in every engagement.">
+                    <span class="icon">💎</span>
+                    <span class="headline">Undisputed Quality Leader</span>
+                </div>
+                <div class="goal" style="background-color:#c0392b;" data-title="Transformed & Digitized Business" data-description="Transform and digitize operations to unlock value.">
+                    <span class="icon">💡</span>
+                    <span class="headline">Transformed & Digitized Business</span>
+                </div>
+                <div class="goal" style="background-color:#2c3e50;" data-title="One Shared Infrastructure" data-description="Build a cohesive infrastructure that supports collaboration.">
+                    <span class="icon">🌐</span>
+                    <span class="headline">One Shared Infrastructure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="goal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3></h3>
+            <p></p>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('goal-modal');
+        const modalTitle = modal.querySelector('h3');
+        const modalDescription = modal.querySelector('p');
+        const closeBtn = modal.querySelector('.close');
+
+        document.querySelectorAll('.goal').forEach(goal => {
+            goal.addEventListener('click', () => {
+                modalTitle.textContent = goal.dataset.title;
+                modalDescription.textContent = goal.dataset.description;
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
